@@ -1,33 +1,46 @@
 body {
-    direction: rtl;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fefefe;
-    margin: 0;
-    padding: 20px;
-    user-select: none; /* منع التحديد */
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  direction: rtl; /* لأن المحتوى عربي */
 }
 
 .container {
-  /* إذا تحب كل الكارتات بنفس التنسيق: */
-  display: grid;  
-  gap: 20px; /* المسافة بين الكروت */
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+  display: grid;
+  gap: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
 }
 
 .card {
-  position: relative; /* لازم للكارت يكون relative */
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .card img {
   display: block;
   width: 100%;
   height: auto;
-  z-index: 1; /* الصورة في الخلفية */
+  object-fit: cover;
+  filter: brightness(70%); /* يخلي الصورة أغمق شوية عشان النص يبان */
 }
 
-.card p, .card h1, .card h2 /* أي عنصر النص */ {
-  position: relative;
-  z-index: 2; /* النص فوق الصورة */
-  margin-top: 10px; /* أو أي مسافة تناسبك */
-  color: #fff /* لو تحتاج لون للنص يكون واضح على الصورة */
-}
-
+.card p {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8); /
