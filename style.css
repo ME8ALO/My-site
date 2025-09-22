@@ -8,32 +8,26 @@ body {
 }
 
 .container {
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
-}
-
-h1 {
-    color: #444;
-    margin-bottom: 40px;
+  /* إذا تحب كل الكارتات بنفس التنسيق: */
+  display: grid;  
+  gap: 20px; /* المسافة بين الكروت */
 }
 
 .card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative; /* لازم للكارت يكون relative */
 }
 
 .card img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 1; /* الصورة في الخلفية */
 }
 
-.card p {
-    font-size: 18px;
-    color: #333;
+.card p, .card h1, .card h2 /* أي عنصر النص */ {
+  position: relative;
+  z-index: 2; /* النص فوق الصورة */
+  margin-top: 10px; /* أو أي مسافة تناسبك */
+  color: #fff /* لو تحتاج لون للنص يكون واضح على الصورة */
 }
+
